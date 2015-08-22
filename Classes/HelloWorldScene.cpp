@@ -239,6 +239,7 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
             else
             {
                 MessageBox("文件下载中，请先停止下载", "温馨提示");
+                label->setString("Delete failed!");
             }
             break;
             

@@ -41,8 +41,8 @@ public:
     virtual bool downloadAndUncompress(std::string url,std::string filePath = "");//下载并自动解压缩
     virtual bool isAutoUncompress()const {return _isAutoUncompress;}
     virtual void setAutoUncompress(bool isAutoUncompress ) {_isAutoUncompress = isAutoUncompress;}
-    virtual bool uncompress();//解压缩的方法
-    bool createDirectory(const char *path);//创建文件目录
+    virtual bool uncompress(std::string path = "");//解压缩的方法
+    virtual bool createDirectory(const char *path);//创建文件目录
     
     
     

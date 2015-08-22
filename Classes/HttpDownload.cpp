@@ -192,10 +192,10 @@ bool HttpDownload::downloadAndUncompress(std::string url,std::string filePath)
     }
 }
 #pragma mark- 解压缩的方法
-bool HttpDownload::uncompress()
+bool HttpDownload::uncompress(std::string path )
 {
     // Open the zip file
-    string outFileName = _filePath + _url.substr(_url.rfind('/') + 1);
+    string outFileName = path == ""? _filePath + _url.substr(_url.rfind('/') + 1):path;
     unzFile zipfile = unzOpen(outFileName.c_str());
     if (! zipfile)
     {
