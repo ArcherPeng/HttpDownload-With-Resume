@@ -216,7 +216,10 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
             break;
         case 101:
         {
-            HttpDownload::getInstance()->download("http://aligame.oss-cn-hangzhou.aliyuncs.com/dkzjh.apk");
+//            HttpDownload::getInstance()->download("http://aligame.oss-cn-hangzhou.aliyuncs.com/dkzjh.apk");
+//            http://developer.baidu.com/map/static/doc/output/BaiduMap_AndroidSDK_v2.4.0_All.zip
+//            HttpDownload::getInstance()->downloadAndUncompress("http://developer.baidu.com/map/static/doc/output/BaiduMap_AndroidSDK_v2.4.0_All.zip");
+            HttpDownload::getInstance()->downloadAndUncompress("http://aligame.oss-cn-hangzhou.aliyuncs.com/dkzjh.apk");
             HttpDownload::getInstance()->setDelegate(this);
             isStop = false;
             break;
@@ -253,7 +256,7 @@ void HelloWorld::onError(CurlDown::ErrorCode errorCode){
 }
 void HelloWorld::onProgress(double percent, void *delegate, string filefullPath){ // 下载进度
 
-    label->setString(StringUtils::format( "%.2f%%",percent));
+    label->setString(StringUtils::format( "Downloading\n%.2f%%",percent));
 }
 void HelloWorld::onSuccess(string filefullPath){
     label->setString("Success");
